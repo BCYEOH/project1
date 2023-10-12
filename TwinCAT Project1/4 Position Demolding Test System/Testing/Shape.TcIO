@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="Shape" Id="{198f614e-0d96-4a63-851b-20c6a8813be4}">
+    <Declaration><![CDATA[INTERFACE Shape
+]]></Declaration>
+    <Method Name="Area" Id="{7568e4f0-c88d-4b0a-80b1-7d6fb96e2fe1}">
+      <Declaration><![CDATA[METHOD Area : Float
+VAR_INPUT
+	fRadiusOfShape: float;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Price" Id="{16d3a293-5b34-4074-8a59-66222b9c1622}">
+      <Declaration><![CDATA[METHOD Price : float
+VAR_INPUT
+	fArea : float;
+	fPriceOverArea: float;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="PricePerMeter" Id="{cc812ca7-5202-461d-9d0b-b3f796a3d317}">
+      <Declaration><![CDATA[PROPERTY PricePerMeter : float]]></Declaration>
+      <Get Name="Get" Id="{4c36d9f7-f5b2-486c-a55e-d59e0f625e1b}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{b34a0093-e856-4e0b-80eb-ed1ac69436eb}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Radius" Id="{ed73755b-11b3-44d1-ae25-223f83866c0f}">
+      <Declaration><![CDATA[PROPERTY Radius : float]]></Declaration>
+      <Get Name="Get" Id="{c5a1bd22-ce36-4754-82bc-f8555cf47964}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{b00ea577-e0d0-4c35-9d1d-2db5f90ad0dc}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

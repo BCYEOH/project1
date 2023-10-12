@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Circle" Id="{e56de714-adc9-4ba4-9ef5-e0e9e74a8968}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Circle IMPLEMENTS Shape
+VAR_INPUT
+	fPricePM: float;
+	fRadius:float;
+END_VAR
+VAR_OUTPUT
+	fFinalPrice:float;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Area" Id="{d51bd3d1-5cb7-486e-afdb-f3f1df040441}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Area : Tc2_Utilities.FLOAT
+VAR_INPUT
+	fRadiusOfShape	: Tc2_Utilities.FLOAT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Area:=3.142*fRadiusOfShape*fRadiusOfShape;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Price" Id="{e9c1eb10-6e86-4ad8-b6f0-d12e98ce6952}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD Price : Tc2_Utilities.FLOAT
+VAR_INPUT
+	fArea	: Tc2_Utilities.FLOAT;
+	fPriceOverArea	: Tc2_Utilities.FLOAT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Price:=fArea*fPriceOverArea;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="PricePerMeter" Id="{9e7fcf0f-1e86-430d-9079-0646e79731bc}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY PricePerMeter : Tc2_Utilities.FLOAT
+]]></Declaration>
+      <Get Name="Get" Id="{0136d7df-53b3-400b-b0ea-fc318d96da04}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{e9ab7a3c-3506-4ea4-b49b-414f00d1e0f4}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="Radius" Id="{7fd6c7b0-4f1a-4d70-ba35-fab7b34dffa0}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Radius : Tc2_Utilities.FLOAT
+]]></Declaration>
+      <Get Name="Get" Id="{6a372489-5b6d-4081-9d42-8b082db77998}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{d58f07b7-3e2a-4cb6-8009-4cdac31ff95f}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+  </POU>
+</TcPlcObject>

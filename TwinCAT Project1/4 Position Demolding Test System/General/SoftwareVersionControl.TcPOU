@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="SoftwareVersionControl" Id="{90ed34d6-c469-4bce-8ed7-8206567798ba}" SpecialFunc="None">
+    <Declaration><![CDATA[(*****************************************************************************************************
+
+Company			EclipseAutomation(Penang) Sdn. Bhd					
+Project			4 Position Demolding Test System
+Author			BC Yeoh
+Desciption		Global discription of version library
+QV-Number		N/A
+
+Used libs		Tc2_Standard	3.3.3.0		 02 Dec 2019 5:54:56 PM			
+				Tc2_System		3.5.3.0		 24 Feb 2023 11:18:34 AM
+				Tc3_Module		3.3.23.0	 18 Jan 2023 3:34:30 PM
+				
+				
+				
+				
+				
+				
+				
+Used shortcuts	-CV		CibaVision 				
+				-RT		RoundTable/Turning Table
+				
+				
+				
+				
+				
+				
+				
+****************************************************************************************)
+PROGRAM SoftwareVersionControl
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*****************************************************************************************************
+Change/DATE			Name				Version/Change Request Nr			Change desciption
+******************************************************************************************************
+19 Sep 2023			BC Yeoh				Vx.y.pp/PRxxxxxxxx					Draft (will update to first release/Qualification version after SAT) 
+			
+				
+				
+				
+				
+				
+				
+****************************************************************************************)]]></ST>
+    </Implementation>
+    <LineIds Name="SoftwareVersionControl">
+      <LineId Id="67" Count="1" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="88" Count="5" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_Sample" Id="{74b67812-4e6d-4c4f-87a7-f91d056aa0f4}">
+    <Declaration><![CDATA[INTERFACE I_Sample
+]]></Declaration>
+    <Method Name="GetType" Id="{ef4a6953-8cf0-4ef3-baa9-92c854a12e80}">
+      <Declaration><![CDATA[METHOD GetType : string
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

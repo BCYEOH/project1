@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="F_DeliverType" Id="{333942c0-18d7-42a9-869b-1f478500edd9}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_DeliverType : string
+VAR_INPUT
+	iSample : I_Name;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[F_DeliverType := iSample.GetType();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

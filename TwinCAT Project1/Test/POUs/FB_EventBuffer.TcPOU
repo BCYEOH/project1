@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_EventBuffer" Id="{086ae6cc-a776-4b87-9805-b5c83d0ad2e4}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EventBuffer
+
+VAR
+MemRingBuffer: FB_MemRingBuffer;	
+aBufferArray  : ARRAY[0..Number_Of_Bytes_For_All_ST_Event] OF BYTE; (* Buffer memory used by FB_MemRingBuffer function block *)
+END_VAR
+
+VAR CONSTANT
+	Size_Of_ST_Event: UDINT :=SIZEOF(ST_Event);
+	Max_Number_Of_ST_Event: UDINT := 5;
+	Number_Of_Bytes_For_All_ST_Event: UDINT := Size_Of_ST_Event*Max_Number_Of_ST_Event;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="GetAndRemoveEvent" Id="{542fcee9-c4d9-439b-b25d-8b85f18f933e}">
+      <Declaration><![CDATA[METHOD PUBLIC GetAndRemoveEvent
+VAR_OUTPUT
+	stEvent: ST_Event;
+	bError : BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[MemRingBuffer.A_RemoveHead(pRead:=ADR(stEvent),
+						  	cbRead:=SIZEOF(stEvent),
+							pBuffer:=ADR(aBufferArray),
+							cbBuffer:=SIZEOF(aBufferArray));
+
+bError:= NOT MemRingBuffer.bOk;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="TryToAddEvent" Id="{5a363483-42f2-4186-8867-7c5405833674}">
+      <Declaration><![CDATA[METHOD PUBLIC TryToAddEvent
+VAR_INPUT
+	stEvent: REFERENCE TO ST_Event;
+END_VAR
+
+VAR_OUTPUT
+    bError : BOOL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[MemRingBuffer.A_AddTail(pWrite:=ADR(stEvent),
+						cbWrite:=SIZEOF(stEvent),
+						pBuffer:=ADR(aBufferArray),cbBuffer:=SIZEOF(aBufferArray));
+bError:= NOT MemRingBuffer.bOk;
+						
+						
+						]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_EventBuffer">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventBuffer.GetAndRemoveEvent">
+      <LineId Id="8" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventBuffer.TryToAddEvent">
+      <LineId Id="5" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="26" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

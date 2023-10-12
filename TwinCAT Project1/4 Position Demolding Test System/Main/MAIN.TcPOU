@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{f0b4eb64-c9a2-439a-ace1-91077b6d5fab}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+(***********************************************************************************************************************************************************************************************************************
+Company			EclipseAutomation(Penang) Sdn. Bhd					
+Project			4 Position Demolding Test System
+Author			BC Yeoh
+Desciption		Global discription of version library
+
+************************************************************************************************************************************************************************************************************************
+Change/DATE			Name				Version			Change desciption
+************************************************************************************************************************************************************************************************************************
+19 Sep 2023			BC Yeoh				Vx.y.pp			Draft (will update to first release/Qualification version after SAT) 
+
+
+
+************************************************************************************************************************************************************************************************************************)
+				
+
+VAR
+//	Trigger : BOOL;
+//	Eventlogger: Eventlogger(CSVPersistentEventStorage);
+//	CSVPersistentEventStorage: FB_CSVPersistentEventStorage;
+//	eEventTypes1: E_EventType:=E_EventType.Alarm ;
+//	eEventSeverity1: TcEventSeverity:= TcEventSeverity.Error;
+//	eEventIdentity1: UDINT :=123;
+//	eEventText1: STRING(255):= 'What does the fok say';
+fCircle : Circle;
+fPriceofCircle : float;
+    iName     : I_Name;
+
+    fbSampleA : FB_A; 
+    sNameA    : STRING;       // will be 'My name is A.'
+
+    fbSampleB : FB_B;
+    sNameB    : STRING;       // will be 'My name is B.' after first cycle
+                              // and will be 'New name' afterwards
+END_VAR
+
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//IF Trigger THEN
+//	Eventlogger.AddEvent(eEventTypes1,eEventSeverity1,eEventIdentity1,eEventText1);
+//	Trigger:=false;
+//END_IF
+//CSVPersistentEventStorage();
+
+// Calling axis module by passing input parameter "bExecuteProcess" of this method to the input parameter "bExecute" of method "Execute"
+//fCircle.Radius:=
+//fCircle.Area(fRadiusOfShape:=10.00);
+//fCircle.Price(fArea:=fCircle.
+//,fPriceOverArea:=10.00);
+
+//// assign FB instance fbSample1 to interface variable
+//iName := fbSampleA;
+ 
+//// access to name property of fbSample1 via interface variable (Get)
+//sNameA := iName.Name;
+ 
+//// access to name property of fbSample2 via FB instance (Get and Set)
+//sNameB := fbSampleB.Name;
+//fbSampleB.Name := 'New name';
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

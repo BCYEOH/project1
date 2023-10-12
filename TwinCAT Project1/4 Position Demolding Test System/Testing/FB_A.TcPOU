@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_A" Id="{35e748e4-3349-4454-ac4a-a44dffb5e8f1}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_A IMPLEMENTS I_Name
+
+VAR
+    sVar1 : STRING := 'My name is A.';
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Property Name="Name" Id="{c6cafcbd-13e4-41c0-8209-8cb893a55895}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY Name : STRING
+]]></Declaration>
+      <Get Name="Get" Id="{f0aefa2c-f863-41ad-a042-591bef54ffe8}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Name := sVar1;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{a8d9d6a7-e057-4e91-9e95-e9dea6813ed5}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[sVar1 := Name;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+  </POU>
+</TcPlcObject>
